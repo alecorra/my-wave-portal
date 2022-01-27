@@ -1,3 +1,13 @@
+// The Hardhat Runtime Environment, or HRE for short,
+// is an object containing all the functionality
+// that Hardhat exposes when running a task, test or script.
+// In reality, Hardhat is the HRE.
+
+// Every time we run a terminal command that starts with npx hardhat,
+// we are getting this hre object built on the fly using the hardhat.config.js specified in our code!
+// This means we will never have to actually do some sort of import into our files like:
+// const hre = require("hardhat")
+
 const main = async () => {
   const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
   const waveContract = await waveContractFactory.deploy();
